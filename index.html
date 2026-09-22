@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة كفوري للمقاولات والتشطيبات | Kafoury Contracting</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --primary-dark: #0f172a;
+            --accent-color: #f59e0b;
+            --accent-hover: #d97706;
+            --bg-light: #f1f5f9;
+            --site-bg-pattern: radial-gradient(#cbd5e1 1px, transparent 1px);
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Variables */
+        body.dark-mode {
+            --bg-light: #0b1120;
+            --site-bg-pattern: radial-gradient(#1e293b 1px, transparent 1px);
+            --card-bg: #1e293b;
+            --text-dark: #f8fafc;
+            --text-muted: #cbd5e1;
+            --border-color: #334155;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            background-image: var(--site-bg-pattern);
+            background-size: 24px 24px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 110px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Top Announcement Discount Bar */
+        .top-discount-bar {
+            background: linear-gradient(90deg, #b91c1c, #d97706);
+            color: #ffffff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .top-discount-bar .btn-discount {
+            background-color: #ffffff;
+            color: #b91c1c;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .top-discount-bar .btn-discount:hover {
+            background-color: var(--primary-dark);
+            color: #ffffff;
+        }
+
+        .close-discount {
+            cursor: pointer;
+            position: absolute;
+            left: 15px;
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 36px;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: top 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        /* Custom Logo Design */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25);
+            transition: var(--transition);
+        }
+
+        .logo-badge i.main-icon {
+            color: var(--accent-color);
+            font-size: 1.6rem;
+        }
+
+        .logo-badge i.sub-icon {
+            position: absolute;
+            bottom: -4px;
+            right: -4px;
+            background: var(--accent-color);
+            color: var(--primary-dark);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            border: 2px solid var(--card-bg);
+        }
+
+        .logo:hover .logo-badge {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        body.dark-mode .logo-text h1 {
+            color: #ffffff;
+        }
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--accent-color); }
+
+        .dropdown { position: relative; }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: var(--card-bg);
+            min-width: 260px;
+            box-shadow: var(--shadow);
+            border-radius: 12px;
+            padding: 0.6rem 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li a {
+            padding: 0.8rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: var(--bg-light);
+            color: var(--accent-color);
+        }
+
+        .theme-toggle-btn {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle-btn:hover { background-color: var(--border-color); }
+
+        .btn-header {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-header:hover { background-color: var(--accent-hover); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.88)), 
+                        url('https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 1rem;
+            margin-top: 106px;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .hero h2 { font-size: 2.8rem; font-weight: 800; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+
+        section { padding: 4.5rem 2rem; max-width: 1200px; margin: 0 auto; }
+
+        .section-title { text-align: center; margin-bottom: 3rem; }
+        .section-title h3 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        body.dark-mode .section-title h3 {
+            color: #ffffff;
+        }
+
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--primary-dark);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-item h4 { font-size: 2.5rem; color: var(--accent-color); font-weight: 800; }
+        .stat-item p { font-size: 0.95rem; color: #94a3b8; }
+
+        /* Dynamic Pages Area */
+        .service-page {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+            padding-top: 2rem;
+        }
+
+        .service-page.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-banner {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .details-box {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 3.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .details-box h3 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        body.dark-mode .details-box h3 {
+            color: var(--accent-color);
+        }
+
+        .details-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .details-list li { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+        .details-list i { color: var(--accent-color); font-size: 1.1rem; }
+
+        /* Sections for Individual Items */
+        .section-item-block {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            scroll-margin-top: 120px;
+        }
+
+        .section-item-block h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        body.dark-mode .section-item-block h3 {
+            color: #ffffff;
+        }
+
+        .section-item-block p.general-desc {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            background: var(--bg-light);
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-right: 4px solid var(--accent-color);
+        }
+
+        /* Pricing Grid */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .price-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .price-card.featured { border-color: var(--accent-color); transform: scale(1.03); }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: #ffffff;
+            padding: 0.3rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+
+        .price-card h4 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 0.5rem; }
+        body.dark-mode .price-card h4 { color: #ffffff; }
+
+        .price { font-size: 1.5rem; font-weight: 800; color: var(--accent-color); margin-bottom: 1.5rem; }
+
+        .package-features { list-style: none; text-align: right; margin-bottom: 2rem; }
+        .package-features li { padding: 0.6rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .package-features i { color: #22c55e; }
+
+        .btn-package {
+            display: block;
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .btn-package:hover { background: var(--accent-color); }
+
+        /* Before / After Slider Section */
+        .before-after-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            height: 450px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .before-after-container img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        .img-after {
+            width: 50%;
+            z-index: 2;
+            overflow: hidden;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .before-after-slider {
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50%;
+            width: 40px;
+            margin-left: -20px;
+            z-index: 10;
+            cursor: ew-resize;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-button {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        /* Customer Reviews Grid Section (30+ Positive Reviews) */
+        .reviews-summary {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .rating-score {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .stars-gold {
+            color: #f59e0b;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-height: 750px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .review-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .review-card:hover { transform: translateY(-5px); border-color: var(--accent-color); }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.8rem;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .review-user h5 { font-size: 1rem; color: var(--text-dark); margin: 0; }
+        .review-user span { font-size: 0.75rem; color: var(--text-muted); }
+
+        .review-text { font-size: 0.9rem; color: var(--text-dark); line-height: 1.5; }
+
+        /* QR Code Container */
+        .qr-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            margin-top: 2rem;
+        }
+
+        .qr-img {
+            width: 150px;
+            height: 150px;
+            margin: 1rem auto;
+            border: 2px solid var(--accent-color);
+            border-radius: 10px;
+            padding: 5px;
+            background: white;
+        }
+
+        /* Services Grid Overview */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem 1.8rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border-top: 4px solid var(--primary-color);
+            cursor: pointer;
+            border-right: 1px solid var(--border-color);
+            border-left: 1px solid var(--border-color);
+        }
+
+        .service-card:hover { transform: translateY(-8px); border-top-color: var(--accent-color); }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(30, 58, 138, 0.08);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        body.dark-mode .service-icon {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: var(--accent-color);
+        }
+
+        /* Calculator Section */
+        .calculator-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .calc-inputs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .calc-result {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+        }
+
+        body.dark-mode .calc-result {
+            color: var(--accent-color);
+        }
+
+        /* Portfolio Gallery */
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            height: 220px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+        /* Form Inputs */
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; margin-bottom: 0.4rem; font-weight: 600; font-size: 0.9rem; }
+        .form-group input, .form-group select { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--card-bg); color: var(--text-dark); }
+
+        /* Booking / Appointment System */
+        .booking-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        body.dark-mode .faq-question {
+            color: var(--accent-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.2rem 1.2rem;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        /* Quote Section */
+        .quote-container {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            border-radius: 20px;
+            padding: 3.5rem 2rem;
+            color: #ffffff;
+            box-shadow: var(--shadow);
+        }
+
+        .quote-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .quote-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+
+        .quote-form {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            color: var(--text-dark);
+        }
+
+        footer { 
+            background-color: var(--primary-dark); 
+            color: #ffffff; 
+            padding: 3rem 2rem 1.5rem; 
+            margin-top: 4rem; 
+            text-align: center; 
+        }
+
+        /* Bottom Copyright Signature Bar */
+        .developer-signature-bar {
+            background-color: #090d16;
+            color: #94a3b8;
+            padding: 0.8rem 1rem;
+            text-align: center;
+            font-size: 0.88rem;
+            font-weight: 600;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+        }
+
+        .developer-signature-bar strong {
+            color: var(--accent-color);
+        }
+
+        .developer-signature-bar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-right: 5px;
+        }
+
+        /* Mobile Action Bar */
+        .mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 38px; left: 0; width: 100%;
+            background: var(--card-bg);
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            padding: 0.5rem 1rem;
+            justify-content: space-around;
+        }
+
+        .mobile-bar a {
+            flex: 1;
+            margin: 0 5px;
+            padding: 0.6rem;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .mobile-btn-wa { background: #25d366; color: white; }
+        .mobile-btn-call { background: var(--primary-color); color: white; }
+
+        @media (max-width: 768px) {
+            .mobile-bar { display: flex; }
+            .whatsapp-float { display: none; }
+            .customer-notification { right: 10px; left: 10px; bottom: 95px; max-width: none; }
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 50px;
+            left: 25px;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        /* Live Customer Request Toast */
+        .customer-notification {
+            position: fixed;
+            bottom: 50px;
+            right: 25px;
+            background: var(--card-bg);
+            border-right: 5px solid #22c55e;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            padding: 0.9rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 998;
+            max-width: 340px;
+            animation: slideInRight 0.5s ease;
+        }
+
+        .customer-notification-icon {
+            background-color: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .customer-notification-text p {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.3;
+        }
+
+        .customer-notification-text span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 2px;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Discount Announcement Bar -->
+    <div class="top-discount-bar" id="top-discount-bar">
+        <span>🔥 <strong>خصم خاص 10%</strong> على المقايسة الشاملة عند الطلب هذا الشهر!</span>
+        <a href="#quote" class="btn-discount">احجز عرضك الآن</a>
+        <i class="fa-solid fa-xmark close-discount" onclick="closeDiscountBar()"></i>
+    </div>
+
+    <!-- Header Navigation -->
+    <header id="main-header">
+        <div class="nav-container">
+            <!-- Custom Branded Logo -->
+            <a href="#" onclick="showHome()" class="logo">
+                <div class="logo-badge">
+                    <i class="fa-solid fa-building-user main-icon"></i>
+                    <i class="fa-solid fa-wrench sub-icon"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>شركة كفوري</h1>
+                    <span>للمقاولات والتشطيبات والديكور</span>
+                </div>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#" onclick="showHome()">الرئيسية</a></li>
+                
+                <li class="dropdown">
+                    <a href="#services-overview">خدماتنا بالتفصيل <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#section-electricity" onclick="showHome()"><i class="fa-solid fa-bolt"></i> قسم الكهرباء والتأسيس</a></li>
+                        <li><a href="#section-plaster" onclick="showHome()"><i class="fa-solid fa-trowel"></i> قسم أعمال المحارة</a></li>
+                        <li><a href="#section-gypsum" onclick="showHome()"><i class="fa-solid fa-layer-group"></i> قسم الجبس والأسقف المعلقة</a></li>
+                        <li><a href="#section-paints" onclick="showHome()"><i class="fa-solid fa-paint-roller"></i> قسم النقاشة والدهانات</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#before-after">قبل وبعد</a></li>
+                <li><a href="#reviews">آراء العملاء</a></li>
+                <li><a href="#booking">حجز معاينة</a></li>
+                <li><a href="#portfolio">معرض الأعمال</a></li>
+                <li><a href="#calculator">حاسبة التكلفة</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="theme-toggle-btn" onclick="toggleDarkMode()" title="تغيير الوضع"><i class="fa-solid fa-moon"></i></button>
+                <a href="#quote" class="btn-header">اتصل بنا</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Home Landing -->
+    <div id="home-landing">
+        <section class="hero">
+            <div>
+                <h2>دقة في التأسيس.. إبداع في التشطيب</h2>
+                <p>تنفيذ كافة بنود التشطيب والمقاولات (كهرباء، محارة، جبس بورد، ودهانات) بأعلى معايير الجودة بأسعار تنافسية.</p>
+                <a href="#quote" class="btn-header" style="padding: 0.8rem 2rem; font-size: 1.1rem;">طلب مقايسة مجانية</a>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h4>+120</h4>
+                <p>مشروع تم تسليمه</p>
+            </div>
+            <div class="stat-item">
+                <h4>100%</h4>
+                <p>التزام بالجدول الزمني</p>
+            </div>
+            <div class="stat-item">
+                <h4>+50,000m²</h4>
+                <p>مساحات تم تشطيبها</p>
+            </div>
+            <div class="stat-item">
+                <h4>10 سنوات</h4>
+                <p>ضمان على التأسيس</p>
+            </div>
+        </div>
+
+        <!-- Before / After Section -->
+        <section id="before-after">
+            <div class="section-title">
+                <h3>تحول المشروعات (قبل وبعد)</h3>
+                <p>اسحب الشريط التفاعلي لمشاهدة جودة التشطيب والتنفيذ الميداني</p>
+            </div>
+            <div class="before-after-container" id="ba-slider">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="بعد التشطيب">
+                <div class="img-after" id="after-img">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80" alt="قبل التشطيب" style="width: 900px; max-width: none;">
+                </div>
+                <div class="before-after-slider" id="slider-handle">
+                    <div class="slider-button"><i class="fa-solid fa-arrows-left-right"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview Grid -->
+        <section id="services-overview">
+            <div class="section-title">
+                <h3>خدماتنا التخصصية</h3>
+                <p>اختر الخدمة للاطلاع على التفاصيل والباقات الخاصة بها</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" onclick="location.href='#section-electricity'">
+                    <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h4>تأسيس وفينش الكهرباء</h4>
+                    <p>شبكات معتمدة، توزيع أحمال، وتأسيس إضاءات مودرن.</p>
+                </div>
+                <div class="service-card" onclick="location.href='#section-plaster'">
+                    <div class="service-icon"><i class="fa-solid fa-trowel"></i></div>
+                    <h4>أعمال المحارة والأسطح</h4>
+                    <p>بؤج وأوتار بـ ميزان الليزر وتربيع وتأكيس الغرف.</p>
+                </div>
+                <div class="service-card" onclick="location.href='#section-gypsum'">
+                    <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h4>الجبس والجبس بورد</h4>
+                    <p>أسقف معلقة، بيوت نور، ومكتبات شاشات بكناوف الأصلي.</p>
+                </div>
+                <div class="service-card" onclick="location.href='#section-paints'">
+                    <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
+                    <h4>النقاشة والدهانات</h4>
+                    <p>تأسيس معجون، سنفرة بالضوء، ودهانات فينش عالمية.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INDIVIDUAL DETAILED SECTIONS WITH GENERAL DESCRIPTIONS -->
+        <section id="all-detailed-sections">
+            
+            <!-- 1. ELECTRICITY SECTION -->
+            <div class="section-item-block" id="section-electricity">
+                <h3><i class="fa-solid fa-bolt" style="color: var(--accent-color);"></i> قسم تأسيس وفينش الكهرباء</h3>
+                <p class="general-desc">
+                    <strong>الشرح العام للبند:</strong> يُعد بند الكهرباء الشريان الحيوي لأي وحدة سكنية أو تجارية. نقوم في هذا البند بتخطيط وتأسيس شبكة الكهرباء بالكامل بناءً على التوزيع الهندسي للأجهزة والأثاث. يشمل ذلك استخدام أسلاك السويدي الأصلية المعتمدة، وتوزيع الأحمال بأمان ترفيعاً للسلامة، وتأسيس مسارات التكييفات، وشبكات الدش والانترنت والسمارت هوم، وصولاً إلى الفينش النهائي للمفاتيح والإضاءات الحديثة (LED Profile).
+                </p>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> حفر وتكسير وتمديد خراطيم الجرار بالشاسيهات والحوائط.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تثبيت علب الماجيك بميزان الليزر والارتفاعات القياسية.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تركيب لوحات التوزيع الرئيسية وقواطع شنايدر المعتمدة.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> سحب كابلات السويدي المعتمدة لجميع الدوائر الكهربائية.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> خطوط مستقلة ومباشرة للتكييفات والسخانات عالية الأحمال.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تركيف وحدات الفينش النهائي، النجف، والـ LED Profile المودرن.</li>
+                </ul>
+            </div>
+
+            <!-- 2. PLASTER SECTION -->
+            <div class="section-item-block" id="section-plaster">
+                <h3><i class="fa-solid fa-trowel" style="color: var(--accent-color);"></i> قسم أعمال المحارة والأسطح</h3>
+                <p class="general-desc">
+                    <strong>الشرح العام للبند:</strong> المحارة هي الأساس الهندسي الصلب الذي يضمن استواء الحوائط والأسقف وتعامد الزوايا. نعتمد في شركتنا نظام "البؤج والأوتار" الموزون بميزان الخيط والليزر، مع تأكيس وتربيع الغرف لضمان استلام الزوايا 90 درجة بدقة متناهية، مما يضمن خروج مرحلة السيراميك والدهانات بأفضل شكل هندسي وبدون أي انحرافات أو عيوب ظاهرة.
+                </p>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> غسيل الحوائط ورش طرطشة مسمارية معززة بأديبوند.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> عمل بؤج وأوتار موزونة بدقة بـ ميزان الخيط والليزر.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تثبيت شبك فايبر/بقلاوة عند فواصل الخرسانة والحوائط لتجنب التشرخ.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> درع وملء الأسطح بالقدة الألمونيوم واستلام استواء الحوائط بالكامل.</li>
+                </ul>
+            </div>
+
+            <!-- 3. GYPSUM SECTION -->
+            <div class="section-item-block" id="section-gypsum">
+                <h3><i class="fa-solid fa-layer-group" style="color: var(--accent-color);"></i> قسم الجبس والأسقف المعلقة</h3>
+                <p class="general-desc">
+                    <strong>الشرح العام للبند:</strong> يضيف بند الجبس بورد لمسة جمالية وعصرية للمكان، حيث يُستخدم لتشكيل الأسقف المعلقة، بيوت النور المخفية، وتصميم مكتبات الشاشات الجدارية. نلتزم باستخدام ألواح كناوف (Knauf) الأصلية والمعتمدة (الأخضر للمطابخ والحمامات والمقاوم للرطوبة، والأبيض للغرف والريسبشن)، مع تثبيتها على شاسيهات صاج ثقيلة ومعالجة الفواصل بمسحوق الشاش والمعجون الخاص لمنع ظهور أي تشققات مستقبلاً.
+                </p>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> تركيب الشاسيهات الصاج الثقيلة (أوميقا، سي، وتيش ثقيل).</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تركيب ألواح كُناف الأصلية (أبيض للجاف وأخضر للرطوبة).</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تصميم بيوت نور، بيت ستارة، وأسقف معلقة مودرن.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> معالجة الفواصل بالشاش المعزز ومعجون كناوف الخاص.</li>
+                </ul>
+            </div>
+
+            <!-- 4. PAINTS SECTION -->
+            <div class="section-item-block" id="section-paints">
+                <h3><i class="fa-solid fa-paint-roller" style="color: var(--accent-color);"></i> قسم النقاشة والدهانات</h3>
+                <p class="general-desc">
+                    <strong>الشرح العام للبند:</strong> مرحلة الدهانات هي المظهر النهائي الجمالي للمشروع. تبدأ العملية بعزل وتأسيس الحوائط بالسيلر المائي لضمان التماسك، يليها سحب 3 سكاكين معجون متين مع السنفرة بالضوء الكاشف للتأكد من الملمس الناعم الخالي من العيوب، وتُختتم بتطبيق وجهين من أفضل أنواع الدهانات العالمية (مثل جوتن قابل للغسيل) أو المؤثرات الديكورية الفاخرة كالقطيفة والبديل للرخام والفيوتك.
+                </p>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> عزل وتجهيز الأسطح باستخدام السيلر المائي/الحراري.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> سحب 3 سكاكين معجون ممتاز وتنعيم بالسنفرة والضوء الكاشف.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تطبيق الدهانات الفينش (مط، نص لمعة) بمنتجات جوتن العالمية.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تركيب بانوهات الفيوتك، بديل الرخام، وبديل الخشب حسب التصميم.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- Main Full Packages -->
+        <section id="packages">
+            <div class="section-title">
+                <h3>باقات التشطيب الشاملة</h3>
+                <p>باقات شاملة التوريد والتنفيذ بأعلى خامات الجودة</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>الباقة الاقتصادية / تأسيس</h4>
+                    <div class="price">3,800 ج.م <span style="font-size: 0.9rem; color: var(--text-muted);">/ م²</span></div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> تأسيس أسلاك السويدي الأصلي</li>
+                        <li><i class="fa-solid fa-check"></i> محارة بؤج وأوتار بالقدة</li>
+                        <li><i class="fa-solid fa-check"></i> تأسيس سباكة بي ار / الشريف</li>
+                        <li><i class="fa-solid fa-check"></i> دهانات سايبس / كابسي 2 سكينة</li>
+                    </ul>
+                    <a href="#booking" class="btn-package">حجز المعاينة</a>
+                </div>
+                <div class="price-card featured">
+                    <span class="badge">الأكثر طلباً</span>
+                    <h4>الباقة المتميزة Super Lux</h4>
+                    <div class="price">6,500 ج.م <span style="font-size: 0.9rem; color: var(--text-muted);">/ م²</span></div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> جميع خامات التأسيس المعتمدة</li>
+                        <li><i class="fa-solid fa-check"></i> جبس بورد كناوف للرسيبشن</li>
+                        <li><i class="fa-solid fa-check"></i> سيراميك فرز أول / بورسلين</li>
+                        <li><i class="fa-solid fa-check"></i> دهانات جوتن قابل للغسيل</li>
+                    </ul>
+                    <a href="#booking" class="btn-package">حجز المعاينة</a>
+                </div>
+                <div class="price-card">
+                    <h4>باقة الـ Ultra VIP</h4>
+                    <div class="price">9,800 ج.م <span style="font-size: 0.9rem; color: var(--text-muted);">/ م²</span></div>
+                    <ul class="package-features">
+                        <li><i class="fa-solid fa-check"></i> أنظمة سمارت هوم وليد بروفايل</li>
+                        <li><i class="fa-solid fa-check"></i> أسقف معلقة بكامل الشقة</li>
+                        <li><i class="fa-solid fa-check"></i> أرضيات بورسلين / باركيه ألماني</li>
+                        <li><i class="fa-solid fa-check"></i> أطقم حمامات ديفيت / أيديال ستاندارد</li>
+                    </ul>
+                    <a href="#booking" class="btn-package">حجز المعاينة</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews & Ratings Section (30+ Positive Reviews) -->
+        <section id="reviews">
+            <div class="section-title">
+                <h3>تقييمات وآراء العملاء</h3>
+                <p>ما يقوله عملاؤنا عن تجربتهم مع شركة كفوري للمقاولات</p>
+            </div>
+
+            <div class="reviews-summary">
+                <div class="rating-score">4.9</div>
+                <div class="stars-gold">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p>بناءً على <strong>+120 تقييم موثق</strong> من عملاء التشطيبات بالمحافظات</p>
+            </div>
+
+            <div class="reviews-grid" id="reviews-container">
+                <!-- 32 Reviews generated dynamically via JS -->
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <h4>امسح الـ QR Code للتواصل المباشر عبر الواتساب</h4>
+                <p>تحدث معنا مباشرة على الرقم: <strong>01005258531 20+</strong></p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/201005258531" alt="WhatsApp QR Code" class="qr-img">
+                <div>
+                    <a href="https://wa.me/201005258531" target="_blank" class="btn-header"><i class="fa-brands fa-whatsapp"></i> مراسلة واتساب فورية</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking & Appointment Section -->
+        <section id="booking">
+            <div class="section-title">
+                <h3>حجز موعد معاينة ميدانية</h3>
+                <p>حدد الموعد والوقت المناسب لك لزيارة مهندس المعاينة لموقعك</p>
+            </div>
+            <div class="booking-card">
+                <form onsubmit="event.preventDefault(); alert('تم حجز موعد المعاينة بنجاح، وسيتواصل معك مهندس الموقع لتأكيد الموعد.');">
+                    <div class="booking-grid">
+                        <div class="form-group">
+                            <label>الاسم الكامل</label>
+                            <input type="text" placeholder="أدخل اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الهاتف</label>
+                            <input type="tel" placeholder="010XXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label>تاريخ المعاينة</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>الوقت المفضل</label>
+                            <select required>
+                                <option value="">اختر الفترة</option>
+                                <option>صباحاً (10 ص - 1 ظ)</option>
+                                <option>عصراً (2 ظ - 5 م)</option>
+                                <option>مساءً (6 م - 9 م)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-header" style="width: 100%; border: none; cursor: pointer; padding: 0.9rem; margin-top: 1rem;">تأكيد حجز الموعد</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Interactive Detailed Cost Calculator -->
+        <section id="calculator">
+            <div class="section-title">
+                <h3>حاسبة التكلفة التقديرية</h3>
+                <p>أدخل مساحة شقتك للحصول على تقدير إجمالي حسب مستوى التشطيب</p>
+            </div>
+            <div class="calculator-card">
+                <div class="calc-inputs">
+                    <div class="form-group">
+                        <label>المساحة الإجمالية (م²)</label>
+                        <input type="number" id="calc-area" placeholder="مثلاً: 120" oninput="calculateEstimate()">
+                    </div>
+                    <div class="form-group">
+                        <label>اختر مستوى التشطيب</label>
+                        <select id="calc-level" onchange="calculateEstimate()">
+                            <option value="3800">باقة اقتصادية (3,800 ج.م / م²)</option>
+                            <option value="6500">باقة سوبر لوكس (6,500 ج.م / م²)</option>
+                            <option value="9800">باقة ألترا VIP (9,800 ج.م / م²)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-result" id="calc-output">
+                    قم بإدخال المساحة للحصول على التقدير التقريبي
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Gallery -->
+        <section id="portfolio">
+            <div class="section-title">
+                <h3>معرض المشروعات المنفذة</h3>
+                <p>نماذج واقعية من التشطيبات والجودة الهندسية</p>
+            </div>
+            <div class="portfolio-filters">
+                <button class="filter-btn active" onclick="filterGallery('all')">الكل</button>
+                <button class="filter-btn" onclick="filterGallery('electric')">الكهرباء</button>
+                <button class="filter-btn" onclick="filterGallery('plaster')">المحارة</button>
+                <button class="filter-btn" onclick="filterGallery('gypsum')">الجبس بورد</button>
+                <button class="filter-btn" onclick="filterGallery('paints')">الدهانات</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item electric">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="تأسيس كهرباء">
+                    <div class="gallery-overlay">
+                        <h4>شبكة كهرباء موزونة</h4>
+                        <p>توزيع أحمال ولوحات معتمدة</p>
+                    </div>
+                </div>
+                <div class="gallery-item plaster">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=80" alt="أعمال المحارة">
+                    <div class="gallery-overlay">
+                        <h4>محارة بؤج وأوتار</h4>
+                        <p>استواء هندسي بـ ميزان الليزر</p>
+                    </div>
+                </div>
+                <div class="gallery-item gypsum">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80" alt="جبس بورد">
+                    <div class="gallery-overlay">
+                        <h4>أسقف معلقة وبيت نور</h4>
+                        <p>ألواح كناوف وشاسيه ثقيل</p>
+                    </div>
+                </div>
+                <div class="gallery-item paints">
+                    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80" alt="نقاشة ودهانات">
+                    <div class="gallery-overlay">
+                        <h4>دهانات ديكورية وفينش</h4>
+                        <p>دهانات جوتن قابلة للغسيل</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <div class="section-title">
+                <h3>الأسئلة الشائعة</h3>
+                <p>كل ما تريد معرفته قبل البدء في مشروعك</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>هل توفر الشركة ضماناً على بنود التأسيس؟</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    نعم، نقدم ضماناً يمتد حتى 10 سنوات على أعمال تأسيس السباكة والكهرباء والمحارة بتقرير مهندس استشاري.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>كيف يتم طريقة الدفع وحساب التكلفة؟</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    تتم الدفعات على مراحل مرتبطة بالاستلام الميداني لكل بند (دفعة مقدماً، دفعة بعد تأسيس الكهرباء والمحارة، ودفعة عند تسليم الفينش النهائي).
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- DYNAMIC SERVICE PAGES AREA (FOR STANDALONE SERVICE PAGES) -->
+
+    <!-- 1. ELECTRICITY PAGE -->
+    <div id="electricity-page" class="service-page">
+        <section>
+            <div class="page-banner">
+                <h2>بند تأسيس وتشطيب الكهرباء</h2>
+                <p>تأسيس كامل للشبكة وتوزيع أحمال هندسي آمن</p>
+            </div>
+            <div class="details-box">
+                <h3>مشتملات بند الكهرباء بالكامل</h3>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> حفر وتكسير وتمديد خراطيم الجرار بالسقف والحوائط.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تثبيت العلب الماجيك بميزان الليزر بالارتفاعات الهندسية.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تركيب لوحة التوزيع الرئيسية (السويدي / شنايدر).</li>
+                    <li><i class="fa-solid fa-check-circle"></i> سحب أسلاك السويدي المعتمدة لجميع الدوائر.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> خطوط مستقلة ومباشرة للتكييفات والسخانات.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تقفيل المفاتيح، الفيش، وحدات الإضاءة، والنجف.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- 2. PLASTER PAGE -->
+    <div id="plaster-page" class="service-page">
+        <section>
+            <div class="page-banner">
+                <h2>بند أعمال المحارة والأسطح</h2>
+                <p>تجهيز حوائط واستواء هندسي بزوايا قائمة 90 درجة</p>
+            </div>
+            <div class="details-box">
+                <h3>مشتملات بند المحارة بالكامل</h3>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> طرطشة مسمارية معززة بأديبوند لضمان التماسك.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> عمل بؤج وأوتار موزونة بـ ميزان الخيط والليزر.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> تثبيت شبك فايبر أو بقلاوة عند فواصل الخرسانات.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> ملء ودرع الخرسانات والحوائط بالقدة الألمونيوم.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- 3. GYPSUM PAGE -->
+    <div id="gypsum-page" class="service-page">
+        <section>
+            <div class="page-banner">
+                <h2>بند الجبس والجبس بورد</h2>
+                <p>أسقف معلقة وديكورات مودرن بألواح معتمدة</p>
+            </div>
+            <div class="details-box">
+                <h3>مشتملات بند الجبس بورد</h3>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> تركيب شاسيهات صاج معززة (أوميقا، سي، وتيش ثقيل).</li>
+                    <li><i class="fa-solid fa-check-circle"></i> أسطح ألواح جبس كُناف (أبيض للجاف، أخضر للمطابخ).</li>
+                    <li><i class="fa-solid fa-check-circle"></i> معالجة الفواصل بـ الشاش والفايبر والمعجون لمنع التشققات.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- 4. PAINTS PAGE -->
+    <div id="paints-page" class="service-page">
+        <section>
+            <div class="page-banner">
+                <h2>بند النقاشة والدهانات</h2>
+                <p>تشطيب سطحي فاخر بخامات جودة عالية وضمان عدم التقشير</p>
+            </div>
+            <div class="details-box">
+                <h3>مشتملات بند النقاشة بالكامل</h3>
+                <ul class="details-list">
+                    <li><i class="fa-solid fa-check-circle"></i> سيلر مائي/حراري لتثبيت ونظافة الأسطح.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> سحب 3 سكاكين معجون ديكوري متين.</li>
+                    <li><i class="fa-solid fa-check-circle"></i> دهان الوجه النهائي (مط، نص لمعة) أو ديكورات قطيفة.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <!-- Quote Request Section -->
+    <section id="quote">
+        <div class="quote-container">
+            <div class="quote-grid">
+                <div>
+                    <h3 style="font-size: 2rem; color: var(--accent-color); margin-bottom: 1rem;">احصل على مقايسة مشروعك</h3>
+                    <p style="margin-bottom: 1.5rem;">تواصل معنا للحصول على معاينة مجانية وحساب التكلفة التقريبية للبنود المطلوبة.</p>
+                </div>
+                <form class="quote-form" onsubmit="event.preventDefault(); alert('تم استلام طلب المعاينة بنجاح، وسنتواصل معك قريباً.');">
+                    <div class="form-group">
+                        <label>الاسم بالكامل</label>
+                        <input type="text" placeholder="أدخل اسمك" required>
+                    </div>
+                    <div class="form-group">
+                        <label>رقم الهاتف / الواتساب</label>
+                        <input type="tel" placeholder="010XXXXXXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البند المطلوب</label>
+                        <select required>
+                            <option value="">اختر الخدمة</option>
+                            <option value="full">تشطيب كامل (جميع البنود)</option>
+                            <option value="electric">تأسيس وفينش كهرباء</option>
+                            <option value="plaster">أعمال محارة وتأسيس</option>
+                            <option value="gypsum">جبس بورد وأسقف معلقة</option>
+                            <option value="paints">نقاشة ودهانات</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-header" style="width: 100%; border: none; cursor: pointer; padding: 0.8rem;">إرسال طلب المعاينة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Footer -->
+    <footer>
+        <p>&copy; 2026 شركة كفوري للمقاولات والتشطيبات | جميع الحقوق محفوظة</p>
+    </footer>
+
+    <!-- Bottom Developer Signature Bar -->
+    <div class="developer-signature-bar">
+        جميع الحقوق محفوظة &copy; 2026 | تصميم <strong>Eng Ebrahim Saad Abdelmawla</strong> - <a href="tel:01101475409">01101475409</a>
+    </div>
+
+    <!-- Live Customer Activity Toast -->
+    <div class="customer-notification" id="customer-toast">
+        <div class="customer-notification-icon"><i class="fa-solid fa-user-check"></i></div>
+        <div class="customer-notification-text">
+            <p id="toast-title">قام أ. أحمد (التجمع الخامس) بطلب مقايسة تشطيب كامل</p>
+            <span id="toast-time">منذ 3 دقائق</span>
+        </div>
+    </div>
+
+    <!-- Mobile Quick Action Bar -->
+    <div class="mobile-bar">
+        <a href="https://wa.me/201005258531" class="mobile-btn-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+        <a href="tel:01101475409" class="mobile-btn-call"><i class="fa-solid fa-phone"></i> اتصل بنا</a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201005258531" class="whatsapp-float" target="_blank" title="تواصل عبر الواتساب المباشر">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Array of 32 Positive Customer Reviews
+        const reviewsData = [
+            { name: "أحمد محمود", loc: "التجمع الخامس", comment: "التزام ممتاز بالمواعيد وجودة التشطيب في بياض المحارة والكهرباء فوق الممتازة." },
+            { name: "د. مصطفى العبد", loc: "الشيخ زايد", comment: "فريق مهندسين على أعلى مستوى، التسليم كان في الموعد المحدد وبدون أي أخطاء." },
+            { name: "م. شريف فهمي", loc: "الشروق", comment: "شغل الجبس بورد والكهرباء روعة، والتأسيس بأسلاك السويدي المعتمدة فعلاً." },
+            { name: "د. نورهان الخولي", loc: "القاهرة الجديدة", comment: "أحسن شركة تعاملت معاها، صراحة المصداقية في الخامات هي أهم حاجة." },
+            { name: "أ. طارق السيد", loc: "مدينة نصر", comment: "النقاشة والدهانات طلعت بالضبط زي تصميم الـ 3D اللي اتفقنا عليه." },
+            { name: "م. عمرو حسام", loc: "أكتوبر", comment: "الالتزام بالجدول الزمني كان نقطة فارقة معايا جزاكم الله خيراً." },
+            { name: "د. هبة عصام", loc: "المعادي", comment: "شغل المحارة البؤج والأوتار خلّى السيراميك والدهانات تطلع مسطرة." },
+            { name: "أ. خالد توفيق", loc: "العبور", comment: "سعر الباقة كان مناسب جداً مقارنة بالجودة العالية اللي استلمتها." },
+            { name: "م. إبراهيم علي", loc: "العاصمة الإدارية", comment: "احترافية شديدة في تأسيس لوحة الكهرباء وتوزيع الأحمال." },
+            { name: "أ. محمد عبد الرحمن", loc: "المنوفية", comment: "التعامل راقي جداً ومهندس المعاينة شرحلي كل التفاصيل بدقة." },
+            { name: "د. وائل سلامة", loc: "طنطا", comment: "تسليم الشقة ع المفتاح وبشكل يفتح النفس، شكراً لشركة كفوري." },
+            { name: "أ. سامح عبد الفتاح", loc: "المهندسين", comment: "مرونة في التعديلات وأمانة كاملة في شراء وتوريد الخامات." },
+            { name: "م. رامي نصار", loc: "مصر الجديدة", comment: "بيت النور والجبس بورد اتنفذ بدقة متناهية وبشاسيهات ثقيلة." },
+            { name: "أ. حسن الديب", loc: "المنصورة", comment: "خدمة المتابعة بعد التسليم والتأسيس ممتازة جداً." },
+            { name: "د. أسماء زاهر", loc: "الشيخ زايد", comment: "الدهانات جوتن الأصلية والفينش النهائي راقي جداً." },
+            { name: "أ. محمود صبري", loc: "بدر", comment: "سرعة ودقة في التنفيذ وتوفير في بند التكلفة الإجمالية." },
+            { name: "م. ياسر القاضي", loc: "العاشر من رمضان", comment: "الاهتمام بأدق التفاصيل والزوايا القائمة في المحارة." },
+            { name: "أ. عصام رضوان", loc: "السادات", comment: "شغل الكهرباء والتوزيع المودرن للـ LED Profile ممتاز." },
+            { name: "د. كريم الهواري", loc: "الإسكندرية", comment: "تجربة راقية وأنصح أي حد مقبل على التشطيب بالتعامل معاهم." },
+            { name: "أ. وليد جابر", loc: "حدائق الأهرام", comment: "أسعار ممتازة واستغلال رائع لكافة المساحات بالشقة." },
+            { name: "م. هاني متولي", loc: "الشروق", comment: "التزام تام ببنود العقد وبدون أي تكاليف خفية." },
+            { name: "أ. ضياء الشريف", loc: "التجمع الأول", comment: "نظافة الموقع وتسليم الشقة بدون أي مخلفات تشطيب." },
+            { name: "د. منى سليم", loc: "الزمالك", comment: "ذوق رفيع في اختيار الألوان وتنسيق الإضاءة." },
+            { name: "أ. علاء فاروق", loc: "طنطا", comment: "معاملة راقية جداً وشفافية في أسعار خامات السباكة والكهرباء." },
+            { name: "م. حازم السعيد", loc: "شبين الكوم", comment: "شغل احترافي ومطابق للمواصفات الهندسية بحذافيرها." },
+            { name: "أ. أيمن مجدي", loc: "العامريّة", comment: "فريق عمل منظم ومحترم بيراعي هدوء الجيران وأصول الشغل." },
+            { name: "د. أحمد زكي", loc: "بنها", comment: "استلام على الميزان وتقرير هندسي مع كل مرحلة." },
+            { name: "أ. إسلام عبد العزيز", loc: "السويس", comment: "سعدت جداً بالتعامل معكم والشقة طلعت أجمل مما تخيلت." },
+            { name: "م. مجدي يونس", loc: "دمياط", comment: "جودة الفينش في الجبس بورد والمكتبات لا يعلى عليها." },
+            { name: "أ. شريف الملاح", loc: "الإسماعيلية", comment: "شركة تحترم العميل وتوفر حلول هندسية ذكية." },
+            { name: "د. سعيد منصور", loc: "أسيوط", comment: "مصداقية عالية وتجربة تشطيب بدون أي توتر أو إرهاق." },
+            { name: "أ. نبيل جاد", loc: "الفيوم", comment: "شكراً للبشمهندس إبراهيم وشركة كفوري على التنفيذ المبدع." }
+        ];
+
+        // Render Reviews
+        function renderReviews() {
+            const container = document.getElementById('reviews-container');
+            if(!container) return;
+            container.innerHTML = reviewsData.map(rev => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">${rev.name.charAt(0)}</div>
+                        <div class="review-user">
+                            <h5>${rev.name}</h5>
+                            <span><i class="fa-solid fa-location-dot"></i> ${rev.loc}</span>
+                        </div>
+                    </div>
+                    <div class="stars-gold" style="font-size: 0.9rem;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"${rev.comment}"</p>
+                </div>
+            `).join('');
+        }
+
+        renderReviews();
+
+        // Dark Mode Toggle Function
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const icon = document.querySelector('.theme-toggle-btn i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.className = 'fa-solid fa-sun';
+            } else {
+                icon.className = 'fa-solid fa-moon';
+            }
+        }
+
+        // Before / After Interactive Slider Logic
+        const slider = document.getElementById('ba-slider');
+        const handle = document.getElementById('slider-handle');
+        const afterImg = document.getElementById('after-img');
+
+        if (slider && handle && afterImg) {
+            let isDragging = false;
+
+            const moveSlider = (x) => {
+                const rect = slider.getBoundingClientRect();
+                let position = x - rect.left;
+                if (position < 0) position = 0;
+                if (position > rect.width) position = rect.width;
+
+                const percentage = (position / rect.width) * 100;
+                handle.style.left = percentage + '%';
+                afterImg.style.width = percentage + '%';
+            };
+
+            handle.addEventListener('mousedown', () => isDragging = true);
+            window.addEventListener('mouseup', () => isDragging = false);
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging) moveSlider(e.clientX);
+            });
+
+            // Touch support for Mobile
+            handle.addEventListener('touchstart', () => isDragging = true);
+            window.addEventListener('touchend', () => isDragging = false);
+            window.addEventListener('touchmove', (e) => {
+                if (isDragging) moveSlider(e.touches[0].clientX);
+            });
+        }
+
+        // Discount Bar Close
+        function closeDiscountBar() {
+            document.getElementById('top-discount-bar').style.display = 'none';
+            document.getElementById('main-header').style.top = '0px';
+            document.querySelector('.hero').style.marginTop = '70px';
+        }
+
+        // Live Toast Activity
+        const liveRequests = [
+            { text: "قام أ. أحمد (التجمع الخامس) بطلب مقايسة تشطيب كامل", time: "منذ 3 دقائق" },
+            { text: "طلب م. محمد (الشيخ زايد) باقة ألترا VIP", time: "منذ 7 دقائق" },
+            { text: "حجز أ. شريف (الشروق) معاينة محارة بؤج وأوتار", time: "منذ 12 دقيقة" },
+            { text: "طلب د. خالد (أكتوبر) باقة النقاشة والدهانات", time: "منذ 18 دقيقة" }
+        ];
+
+        let currentToastIndex = 0;
+        function updateCustomerToast() {
+            const toast = document.getElementById('customer-toast');
+            currentToastIndex = (currentToastIndex + 1) % liveRequests.length;
+            
+            toast.style.animation = 'none';
+            void toast.offsetHeight; 
+            toast.style.animation = 'slideInRight 0.5s ease';
+
+            document.getElementById('toast-title').innerText = liveRequests[currentToastIndex].text;
+            document.getElementById('toast-time').innerText = liveRequests[currentToastIndex].time;
+        }
+
+        setInterval(updateCustomerToast, 6000);
+
+        function hideAllPages() {
+            document.getElementById('home-landing').style.display = 'none';
+            const pages = document.querySelectorAll('.service-page');
+            pages.forEach(page => page.classList.remove('active'));
+        }
+
+        function showHome() {
+            hideAllPages();
+            document.getElementById('home-landing').style.display = 'block';
+        }
+
+        function showService(serviceId) {
+            hideAllPages();
+            const targetPage = document.getElementById(serviceId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function calculateEstimate() {
+            const area = document.getElementById('calc-area').value;
+            const price = document.getElementById('calc-level').value;
+            const output = document.getElementById('calc-output');
+
+            if (area && area > 0) {
+                const total = area * price;
+                output.innerHTML = `التكلفة التقديرية الإجمالية: <strong>${total.toLocaleString('ar-EG')} ج.م</strong> تقريباً`;
+            } else {
+                output.innerHTML = 'قم بإدخال المساحة للحصول على التقدير التقريبي';
+            }
+        }
+
+        function filterGallery(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.className = 'fa-solid fa-chevron-down';
+            } else {
+                answer.style.display = 'block';
+                icon.className = 'fa-solid fa-chevron-up';
+            }
+        }
+    </script>
+</body>
+</html>
